@@ -1,0 +1,98 @@
+================
+Empty variable
+================
+
+/d(1)=<>
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (int)))
+    (value
+      (data
+        (variable)))))
+
+================
+Typed variable
+================
+
+/d(1)=<int>
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (int)))
+    (value
+      (data
+        (variable
+          (var_types
+            (type_name)))))))
+
+================
+Multi-typed variable
+================
+
+/d(1)=<int|float|bytes>
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (int)))
+    (value
+      (data
+        (variable
+          (var_types
+            (type_name)
+            (type_name)
+            (type_name)))))))
+
+================
+Named variable
+================
+
+/d(<name:int>)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (variable
+          (var_name)
+          (var_types
+            (type_name)))))))
+
+================
+Variable in directory
+================
+
+/my/<>/thing
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name)
+      (directory
+        (variable)
+        (directory
+          (dir_name))))))

@@ -1,0 +1,617 @@
+[
+  {
+    "type": "bool",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "data",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "bytes",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "options",
+          "named": true
+        },
+        {
+          "type": "reference",
+          "named": true
+        },
+        {
+          "type": "special_float",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "uuid",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        },
+        {
+          "type": "vstamp",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "directory",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "dir_name",
+          "named": true
+        },
+        {
+          "type": "directory",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "nil",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "option",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "option_keyword",
+          "named": true
+        },
+        {
+          "type": "option_value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "option_keyword",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "option_value",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "options",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "option",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "query",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directory",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "reference",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "ref_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "query",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "special_float",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "escape_sequence",
+          "named": true
+        },
+        {
+          "type": "string_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tuple",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "data",
+          "named": true
+        },
+        {
+          "type": "maybemore",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "type_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "value",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "data",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "var_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "var_types",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "type_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "variable",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "options",
+          "named": true
+        },
+        {
+          "type": "var_name",
+          "named": true
+        },
+        {
+          "type": "var_types",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "-inf",
+    "named": false
+  },
+  {
+    "type": "-nan",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "any",
+    "named": false
+  },
+  {
+    "type": "append",
+    "named": false
+  },
+  {
+    "type": "avg",
+    "named": false
+  },
+  {
+    "type": "be",
+    "named": false
+  },
+  {
+    "type": "bigendian",
+    "named": false
+  },
+  {
+    "type": "bint",
+    "named": false
+  },
+  {
+    "type": "bool",
+    "named": false
+  },
+  {
+    "type": "bytes",
+    "named": false
+  },
+  {
+    "type": "bytes",
+    "named": true
+  },
+  {
+    "type": "clear",
+    "named": false
+  },
+  {
+    "type": "comment",
+    "named": true,
+    "extra": true
+  },
+  {
+    "type": "count",
+    "named": false
+  },
+  {
+    "type": "dir_name",
+    "named": true
+  },
+  {
+    "type": "endian",
+    "named": false
+  },
+  {
+    "type": "escape_sequence",
+    "named": true
+  },
+  {
+    "type": "f32",
+    "named": false
+  },
+  {
+    "type": "f64",
+    "named": false
+  },
+  {
+    "type": "f80",
+    "named": false
+  },
+  {
+    "type": "false",
+    "named": false
+  },
+  {
+    "type": "float",
+    "named": false
+  },
+  {
+    "type": "float",
+    "named": true
+  },
+  {
+    "type": "i16",
+    "named": false
+  },
+  {
+    "type": "i32",
+    "named": false
+  },
+  {
+    "type": "i64",
+    "named": false
+  },
+  {
+    "type": "i8",
+    "named": false
+  },
+  {
+    "type": "inf",
+    "named": false
+  },
+  {
+    "type": "int",
+    "named": false
+  },
+  {
+    "type": "int",
+    "named": true
+  },
+  {
+    "type": "limit",
+    "named": false
+  },
+  {
+    "type": "max",
+    "named": false
+  },
+  {
+    "type": "maybemore",
+    "named": true
+  },
+  {
+    "type": "min",
+    "named": false
+  },
+  {
+    "type": "mode",
+    "named": false
+  },
+  {
+    "type": "nan",
+    "named": false
+  },
+  {
+    "type": "nil",
+    "named": false
+  },
+  {
+    "type": "num",
+    "named": false
+  },
+  {
+    "type": "pick",
+    "named": false
+  },
+  {
+    "type": "raw",
+    "named": false
+  },
+  {
+    "type": "ref_name",
+    "named": true
+  },
+  {
+    "type": "remove",
+    "named": false
+  },
+  {
+    "type": "reverse",
+    "named": false
+  },
+  {
+    "type": "sep",
+    "named": false
+  },
+  {
+    "type": "snapshot",
+    "named": false
+  },
+  {
+    "type": "str",
+    "named": false
+  },
+  {
+    "type": "strict",
+    "named": false
+  },
+  {
+    "type": "string",
+    "named": false
+  },
+  {
+    "type": "string_content",
+    "named": true
+  },
+  {
+    "type": "sum",
+    "named": false
+  },
+  {
+    "type": "true",
+    "named": false
+  },
+  {
+    "type": "tup",
+    "named": false
+  },
+  {
+    "type": "tuple",
+    "named": false
+  },
+  {
+    "type": "u16",
+    "named": false
+  },
+  {
+    "type": "u32",
+    "named": false
+  },
+  {
+    "type": "u64",
+    "named": false
+  },
+  {
+    "type": "u8",
+    "named": false
+  },
+  {
+    "type": "unsigned",
+    "named": false
+  },
+  {
+    "type": "uuid",
+    "named": false
+  },
+  {
+    "type": "uuid",
+    "named": true
+  },
+  {
+    "type": "vstamp",
+    "named": false
+  },
+  {
+    "type": "vstamp",
+    "named": true
+  },
+  {
+    "type": "width",
+    "named": false
+  },
+  {
+    "type": "|",
+    "named": false
+  }
+]

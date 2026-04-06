@@ -1,0 +1,133 @@
+================
+Set integer value
+================
+
+/my/dir("hello")=42
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name)
+      (directory
+        (dir_name)))
+    (tuple
+      (data
+        (string
+          (string_content))))
+    (value
+      (data
+        (int)))))
+
+================
+Set with clear
+================
+
+/some/where("home")=clear
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name)
+      (directory
+        (dir_name)))
+    (tuple
+      (data
+        (string
+          (string_content))))
+    (value)))
+
+================
+Read with variable value
+================
+
+/my/dir(99.8)=<>
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name)
+      (directory
+        (dir_name)))
+    (tuple
+      (data
+        (float)))
+    (value
+      (data
+        (variable)))))
+
+================
+Read with typed variable
+================
+
+/my/dir("hello")=<int|float|bytes>
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name)
+      (directory
+        (dir_name)))
+    (tuple
+      (data
+        (string
+          (string_content))))
+    (value
+      (data
+        (variable
+          (var_types
+            (type_name)
+            (type_name)
+            (type_name)))))))
+
+================
+Key only (no value)
+================
+
+/my/dir(99.8)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name)
+      (directory
+        (dir_name)))
+    (tuple
+      (data
+        (float)))))
+
+================
+Set tuple value
+================
+
+/my/dir(22.3)=("another", "tuple")
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name)
+      (directory
+        (dir_name)))
+    (tuple
+      (data
+        (float)))
+    (value
+      (data
+        (tuple
+          (data
+            (string
+              (string_content)))
+          (data
+            (string
+              (string_content))))))))

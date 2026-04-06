@@ -1,0 +1,97 @@
+================
+Reference
+================
+
+/d(1)=:myref
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (int)))
+    (value
+      (data
+        (reference
+          (ref_name))))))
+
+================
+Options block
+================
+
+/d(<int[i32]>)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (variable
+          (var_types
+            (type_name))
+          (options
+            (option
+              (option_keyword))))))))
+
+================
+Options with value
+================
+
+/d(<int[width:4]>)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (variable
+          (var_types
+            (type_name))
+          (options
+            (option
+              (option_keyword)
+              (option_value))))))))
+
+================
+Special float nan
+================
+
+/d(nan)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (special_float)))))
+
+================
+Remove value
+================
+
+/my/dir(1)=remove
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name)
+      (directory
+        (dir_name)))
+    (tuple
+      (data
+        (int)))
+    (value)))

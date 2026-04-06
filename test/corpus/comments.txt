@@ -1,0 +1,57 @@
+================
+Line comment
+================
+
+% this is a comment
+
+---
+
+(source_file
+  (comment))
+
+================
+Comment in multiline tuple
+================
+
+/d( "element 1", % comment 1
+  "element 2", % comment 2
+)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (string
+          (string_content)))
+      (comment)
+      (data
+        (string
+          (string_content)))
+      (comment))))
+
+================
+Comment after query
+================
+
+/my/dir(1)=2
+% a comment
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name)
+      (directory
+        (dir_name)))
+    (tuple
+      (data
+        (int)))
+    (value
+      (data
+        (int))))
+  (comment))

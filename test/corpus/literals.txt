@@ -1,0 +1,230 @@
+================
+Integer
+================
+
+/d(123)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (int)))))
+
+================
+Negative integer
+================
+
+/d(-14)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (int)))))
+
+================
+Float
+================
+
+/d(33.4)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (float)))))
+
+================
+Float with scientific notation
+================
+
+/d(3.47e08)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (float)))))
+
+================
+Boolean true
+================
+
+/d(true)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (bool)))))
+
+================
+Boolean false
+================
+
+/d(false)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (bool)))))
+
+================
+Nil
+================
+
+/d(1)=nil
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (int)))
+    (value
+      (data
+        (nil)))))
+
+================
+UUID
+================
+
+/d(5a5ebefd-2193-47e2-8def-f464fc698e31)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (uuid)))))
+
+================
+Bytes
+================
+
+/d(0xabcf03)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (bytes)))))
+
+================
+Versionstamp
+================
+
+/d(#fab34cd8ff032b223400:00ff)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (vstamp)))))
+
+================
+Versionstamp user-only
+================
+
+/d(#:00fa)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (vstamp)))))
+
+================
+String with escapes
+================
+
+/d("he said \"yo\"")
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (string
+          (string_content)
+          (escape_sequence)
+          (string_content)
+          (escape_sequence))))))
+
+================
+Special float inf
+================
+
+/d(inf)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (special_float)))))
+
+================
+Special float negative inf
+================
+
+/d(-inf)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (special_float)))))

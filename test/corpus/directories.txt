@@ -1,0 +1,83 @@
+================
+Simple directory
+================
+
+/hello
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))))
+
+======================
+Multi-segment directory
+======================
+
+/hello/world
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name)
+      (directory
+        (dir_name)))))
+
+===========================
+Directory with string segment
+===========================
+
+/my/"dir@--\o/"
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name)
+      (directory
+        (string
+          (string_content)
+          (escape_sequence)
+          (string_content))))))
+
+============================
+Directory with variable segment
+============================
+
+/root/<>/items/<>
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name)
+      (directory
+        (variable)
+        (directory
+          (dir_name)
+          (directory
+            (variable)))))))
+
+===========================
+Deep directory path
+===========================
+
+/a/b/c/d
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name)
+      (directory
+        (dir_name)
+        (directory
+          (dir_name)
+          (directory
+            (dir_name)))))))

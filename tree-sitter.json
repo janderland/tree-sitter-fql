@@ -1,0 +1,25 @@
+{
+  "grammars": [
+    {
+      "name": "fql",
+      "camelcase": "Fql",
+      "scope": "source.fql",
+      "path": ".",
+      "file-types": ["fql"],
+      "highlights": "queries/highlights.scm"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Tree-sitter grammar for the FQL query language",
+    "links": {
+      "repository": ""
+    }
+  },
+  "bindings": {
+    "c": true,
+    "node": true,
+    "rust": true
+  }
+}

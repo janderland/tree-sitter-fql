@@ -1,0 +1,111 @@
+================
+Empty tuple
+================
+
+/d()
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple)))
+
+================
+Single element
+================
+
+/d(17)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (int)))))
+
+================
+Multiple elements
+================
+
+/d("hello", 23.3, -3)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (string
+          (string_content)))
+      (data
+        (float))
+      (data
+        (int)))))
+
+================
+Nested tuple
+================
+
+/d("hello", (-3))
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (string
+          (string_content)))
+      (data
+        (tuple
+          (data
+            (int)))))))
+
+================
+Tuple with maybemore
+================
+
+/d(0xFF, "thing", ...)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (bytes))
+      (data
+        (string
+          (string_content)))
+      (maybemore))))
+
+================
+Trailing comma
+================
+
+/d(1, 2, 3,)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (int))
+      (data
+        (int))
+      (data
+        (int)))))

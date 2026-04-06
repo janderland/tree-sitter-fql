@@ -1,0 +1,25 @@
+{
+  "name": "tree-sitter-fql",
+  "version": "0.1.0",
+  "description": "Tree-sitter grammar for the FQL query language",
+  "main": "bindings/node",
+  "types": "bindings/node/index.d.ts",
+  "keywords": [
+    "tree-sitter",
+    "parser",
+    "fql",
+    "foundationdb"
+  ],
+  "tree-sitter": [
+    {
+      "scope": "source.fql",
+      "file-types": [
+        "fql"
+      ],
+      "highlights": "queries/highlights.scm"
+    }
+  ],
+  "devDependencies": {
+    "tree-sitter-cli": "^0.26.0"
+  }
+}
