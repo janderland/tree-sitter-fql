@@ -28,7 +28,7 @@
 
 ; Directory
 (dir_name) @module
-"/" @punctuation.delimiter
+["/" "@"] @punctuation.delimiter
 
 ; Tuple
 "(" @punctuation.bracket

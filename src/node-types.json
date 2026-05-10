@@ -80,11 +80,11 @@
           "named": true
         },
         {
-          "type": "directory",
+          "type": "string",
           "named": true
         },
         {
-          "type": "string",
+          "type": "subdir",
           "named": true
         },
         {
@@ -232,6 +232,33 @@
     }
   },
   {
+    "type": "subdir",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "dir_name",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "subdir",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "tuple",
     "named": true,
     "fields": {},
@@ -358,6 +385,10 @@
     "named": false
   },
   {
+    "type": "@",
+    "named": false
+  },
+  {
     "type": "[",
     "named": false
   },
@@ -395,11 +426,11 @@
   },
   {
     "type": "bytes",
-    "named": false
+    "named": true
   },
   {
     "type": "bytes",
-    "named": true
+    "named": false
   },
   {
     "type": "clear",
@@ -444,11 +475,11 @@
   },
   {
     "type": "float",
-    "named": false
+    "named": true
   },
   {
     "type": "float",
-    "named": true
+    "named": false
   },
   {
     "type": "i16",

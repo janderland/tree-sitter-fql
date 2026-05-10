@@ -25,9 +25,15 @@ module.exports = grammar({
     ),
 
     directory: $ => prec.right(seq(
+      choice('/', '@'),
+      choice($.variable, $.string, $.dir_name),
+      optional($.subdir),
+    )),
+
+    subdir: $ => prec.right(seq(
       '/',
       choice($.variable, $.string, $.dir_name),
-      optional($.directory),
+      optional($.subdir),
     )),
 
     dir_name: _ => token(/[a-zA-Z0-9._-]+/),
