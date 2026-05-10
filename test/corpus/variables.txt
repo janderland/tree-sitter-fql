@@ -92,7 +92,7 @@ Variable in directory
   (query
     (directory
       (dir_name)
-      (directory
+      (subdir
         (variable)
-        (directory
+        (subdir
           (dir_name))))))

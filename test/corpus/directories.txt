@@ -23,7 +23,7 @@ Multi-segment directory
   (query
     (directory
       (dir_name)
-      (directory
+      (subdir
         (dir_name)))))
 
 ===========================
@@ -38,7 +38,7 @@ Directory with string segment
   (query
     (directory
       (dir_name)
-      (directory
+      (subdir
         (string
           (string_content)
           (escape_sequence)
@@ -56,11 +56,11 @@ Directory with variable segment
   (query
     (directory
       (dir_name)
-      (directory
+      (subdir
         (variable)
-        (directory
+        (subdir
           (dir_name)
-          (directory
+          (subdir
             (variable)))))))
 
 ===========================
@@ -75,9 +75,89 @@ Deep directory path
   (query
     (directory
       (dir_name)
-      (directory
+      (subdir
         (dir_name)
-        (directory
+        (subdir
           (dir_name)
-          (directory
+          (subdir
             (dir_name)))))))
+
+==========================
+Virtual directory
+==========================
+
+@hello
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))))
+
+==========================
+Virtual multi-segment directory
+==========================
+
+@cache/users
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name)
+      (subdir
+        (dir_name)))))
+
+==========================
+Virtual directory with variable
+==========================
+
+@<>/items
+
+---
+
+(source_file
+  (query
+    (directory
+      (variable)
+      (subdir
+        (dir_name)))))
+
+==========================
+Virtual directory with string segment
+==========================
+
+@"v dir"/items
+
+---
+
+(source_file
+  (query
+    (directory
+      (string
+        (string_content))
+      (subdir
+        (dir_name)))))
+
+==========================
+Virtual directory with tuple and value
+==========================
+
+@root/users(1)=2
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name)
+      (subdir
+        (dir_name)))
+    (tuple
+      (data
+        (int)))
+    (value
+      (data
+        (int)))))

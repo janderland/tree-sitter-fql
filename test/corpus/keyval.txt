@@ -10,7 +10,7 @@ Set integer value
   (query
     (directory
       (dir_name)
-      (directory
+      (subdir
         (dir_name)))
     (tuple
       (data
@@ -32,7 +32,7 @@ Set with clear
   (query
     (directory
       (dir_name)
-      (directory
+      (subdir
         (dir_name)))
     (tuple
       (data
@@ -52,7 +52,7 @@ Read with variable value
   (query
     (directory
       (dir_name)
-      (directory
+      (subdir
         (dir_name)))
     (tuple
       (data
@@ -73,7 +73,7 @@ Read with typed variable
   (query
     (directory
       (dir_name)
-      (directory
+      (subdir
         (dir_name)))
     (tuple
       (data
@@ -99,7 +99,7 @@ Key only (no value)
   (query
     (directory
       (dir_name)
-      (directory
+      (subdir
         (dir_name)))
     (tuple
       (data
@@ -117,7 +117,7 @@ Set tuple value
   (query
     (directory
       (dir_name)
-      (directory
+      (subdir
         (dir_name)))
     (tuple
       (data

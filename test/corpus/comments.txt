@@ -46,7 +46,7 @@ Comment after query
   (query
     (directory
       (dir_name)
-      (directory
+      (subdir
         (dir_name)))
     (tuple
       (data
