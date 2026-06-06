@@ -737,10 +737,6 @@
         },
         {
           "type": "STRING",
-          "value": "bint"
-        },
-        {
-          "type": "STRING",
           "value": "float"
         },
         {

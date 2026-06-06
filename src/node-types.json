@@ -417,20 +417,16 @@
     "named": false
   },
   {
-    "type": "bint",
-    "named": false
-  },
-  {
     "type": "bool",
     "named": false
   },
   {
     "type": "bytes",
-    "named": true
+    "named": false
   },
   {
     "type": "bytes",
-    "named": false
+    "named": true
   },
   {
     "type": "clear",
@@ -475,11 +471,11 @@
   },
   {
     "type": "float",
-    "named": true
+    "named": false
   },
   {
     "type": "float",
-    "named": false
+    "named": true
   },
   {
     "type": "i16",

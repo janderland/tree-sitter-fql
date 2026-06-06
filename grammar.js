@@ -138,7 +138,7 @@ module.exports = grammar({
     ),
 
     type_name: _ => choice(
-      'any', 'tuple', 'tup', 'bool', 'int', 'num', 'bint',
+      'any', 'tuple', 'tup', 'bool', 'int', 'num',
       'float', 'string', 'str', 'uuid', 'bytes', 'vstamp',
       'nil', 'append', 'sum', 'avg', 'min', 'max', 'count',
     ),
