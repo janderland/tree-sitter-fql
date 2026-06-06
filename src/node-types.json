@@ -9,7 +9,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
@@ -95,11 +95,6 @@
     }
   },
   {
-    "type": "nil",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "option",
     "named": true,
     "fields": {},
@@ -166,6 +161,10 @@
           "named": true
         },
         {
+          "type": "options",
+          "named": true
+        },
+        {
           "type": "tuple",
           "named": true
         },
@@ -181,11 +180,15 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "ref_name",
+          "named": true
+        },
+        {
+          "type": "type_cast",
           "named": true
         }
       ]
@@ -278,6 +281,40 @@
     }
   },
   {
+    "type": "type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "options",
+          "named": true
+        },
+        {
+          "type": "type_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "type_cast",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "type_name",
     "named": true,
     "fields": {}
@@ -311,7 +348,7 @@
       "required": true,
       "types": [
         {
-          "type": "type_name",
+          "type": "type",
           "named": true
         }
       ]
@@ -326,10 +363,6 @@
       "required": false,
       "types": [
         {
-          "type": "options",
-          "named": true
-        },
-        {
           "type": "var_name",
           "named": true
         },
@@ -339,6 +372,10 @@
         }
       ]
     }
+  },
+  {
+    "type": "!",
+    "named": false
   },
   {
     "type": "\"",
@@ -446,10 +483,6 @@
     "named": true
   },
   {
-    "type": "endian",
-    "named": false
-  },
-  {
     "type": "escape_sequence",
     "named": true
   },
@@ -467,10 +500,6 @@
   },
   {
     "type": "false",
-    "named": false
-  },
-  {
-    "type": "float",
     "named": false
   },
   {
@@ -531,14 +560,10 @@
   },
   {
     "type": "nil",
-    "named": false
+    "named": true
   },
   {
     "type": "num",
-    "named": false
-  },
-  {
-    "type": "pick",
     "named": false
   },
   {
@@ -558,7 +583,7 @@
     "named": false
   },
   {
-    "type": "sep",
+    "type": "separator",
     "named": false
   },
   {
@@ -571,10 +596,6 @@
   },
   {
     "type": "strict",
-    "named": false
-  },
-  {
-    "type": "string",
     "named": false
   },
   {
@@ -591,10 +612,6 @@
   },
   {
     "type": "tup",
-    "named": false
-  },
-  {
-    "type": "tuple",
     "named": false
   },
   {

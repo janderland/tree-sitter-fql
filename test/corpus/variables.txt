@@ -36,13 +36,14 @@ Typed variable
       (data
         (variable
           (var_types
-            (type_name)))))))
+            (type
+              (type_name))))))))
 
 ================
 Multi-typed variable
 ================
 
-/d(1)=<int|float|bytes>
+/d(1)=<int|num|bytes>
 
 ---
 
@@ -57,9 +58,12 @@ Multi-typed variable
       (data
         (variable
           (var_types
-            (type_name)
-            (type_name)
-            (type_name)))))))
+            (type
+              (type_name))
+            (type
+              (type_name))
+            (type
+              (type_name))))))))
 
 ================
 Named variable
@@ -78,7 +82,8 @@ Named variable
         (variable
           (var_name)
           (var_types
-            (type_name)))))))
+            (type
+              (type_name))))))))
 
 ================
 Variable in directory

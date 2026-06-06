@@ -34,10 +34,11 @@ Options block
       (data
         (variable
           (var_types
-            (type_name))
-          (options
-            (option
-              (option_keyword))))))))
+            (type
+              (type_name)
+              (options
+                (option
+                  (option_keyword))))))))))
 
 ================
 Options with value
@@ -55,11 +56,12 @@ Options with value
       (data
         (variable
           (var_types
-            (type_name))
-          (options
-            (option
-              (option_keyword)
-              (option_value))))))))
+            (type
+              (type_name)
+              (options
+                (option
+                  (option_keyword)
+                  (option_value))))))))))
 
 ================
 Special float nan
@@ -95,3 +97,121 @@ Remove value
       (data
         (int)))
     (value)))
+
+================
+Reference with type cast
+================
+
+/d(:r!int)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (reference
+          (ref_name)
+          (type_cast
+            (type
+              (type_name))))))))
+
+================
+Reference with type cast and options
+================
+
+/d(:r!int[u8])
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (reference
+          (ref_name)
+          (type_cast
+            (type
+              (type_name)
+              (options
+                (option
+                  (option_keyword))))))))))
+
+================
+Per-type options in multi-typed variable
+================
+
+/d(<int[u8]|num[f32,be]>)
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (variable
+          (var_types
+            (type
+              (type_name)
+              (options
+                (option
+                  (option_keyword))))
+            (type
+              (type_name)
+              (options
+                (option
+                  (option_keyword))
+                (option
+                  (option_keyword))))))))))
+
+================
+Data with trailing options
+================
+
+/d()=42[u8]
+
+---
+
+(source_file
+  (query
+    (directory
+      (dir_name))
+    (tuple)
+    (value
+      (data
+        (int)
+        (options
+          (option
+            (option_keyword)))))))
+
+================
+Query-level options prefix
+================
+
+[reverse,limit:5]
+/d(<int>)
+
+---
+
+(source_file
+  (query
+    (options
+      (option
+        (option_keyword))
+      (option
+        (option_keyword)
+        (option_value)))
+    (directory
+      (dir_name))
+    (tuple
+      (data
+        (variable
+          (var_types
+            (type
+              (type_name))))))))

@@ -65,7 +65,7 @@ Read with variable value
 Read with typed variable
 ================
 
-/my/dir("hello")=<int|float|bytes>
+/my/dir("hello")=<int|num|bytes>
 
 ---
 
@@ -83,9 +83,12 @@ Read with typed variable
       (data
         (variable
           (var_types
-            (type_name)
-            (type_name)
-            (type_name)))))))
+            (type
+              (type_name))
+            (type
+              (type_name))
+            (type
+              (type_name))))))))
 
 ================
 Key only (no value)

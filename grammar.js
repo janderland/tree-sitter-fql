@@ -11,6 +11,7 @@ module.exports = grammar({
     comment: _ => token(seq('%', /.*/)),
 
     query: $ => seq(
+      optional($.options),
       $.directory,
       optional(seq(
         $.tuple,
@@ -54,21 +55,23 @@ module.exports = grammar({
 
     maybemore: _ => '...',
 
-    data: $ => choice(
-      $.nil,
-      $.variable,
-      $.tuple,
-      $.bool,
-      $.special_float,
-      $.float,
-      $.int,
-      $.string,
-      $.uuid,
-      $.bytes,
-      $.vstamp,
-      $.reference,
-      $.options,
-    ),
+    data: $ => prec.right(seq(
+      choice(
+        $.nil,
+        $.variable,
+        $.tuple,
+        $.bool,
+        $.special_float,
+        $.float,
+        $.int,
+        $.string,
+        $.uuid,
+        $.bytes,
+        $.vstamp,
+        $.reference,
+      ),
+      optional($.options),
+    )),
 
     nil: _ => 'nil',
 
@@ -126,27 +129,34 @@ module.exports = grammar({
         seq($.var_name, ':', optional($.var_types)),
         $.var_types,
       )),
-      optional($.options),
       '>',
     ),
 
     var_name: _ => /[a-zA-Z0-9_.]+/,
 
     var_types: $ => seq(
-      $.type_name,
-      repeat(seq('|', $.type_name)),
+      $.type,
+      repeat(seq('|', $.type)),
     ),
 
+    type: $ => prec.right(seq(
+      $.type_name,
+      optional($.options),
+    )),
+
     type_name: _ => choice(
-      'any', 'tuple', 'tup', 'bool', 'int', 'num',
-      'float', 'string', 'str', 'uuid', 'bytes', 'vstamp',
-      'nil', 'append', 'sum', 'avg', 'min', 'max', 'count',
+      'any', 'int', 'bool', 'num', 'str', 'bytes',
+      'uuid', 'tup', 'vstamp',
+      'append', 'sum', 'avg', 'min', 'max', 'count',
     ),
 
     reference: $ => seq(
       ':',
       alias(/[a-zA-Z0-9_.]+/, $.ref_name),
+      optional($.type_cast),
     ),
+
+    type_cast: $ => seq('!', $.type),
 
     options: $ => seq(
       '[',
@@ -163,9 +173,9 @@ module.exports = grammar({
     ),
 
     option_keyword: _ => choice(
-      'be', 'sep', 'endian', 'width', 'unsigned', 'raw',
-      'bigendian', 'reverse', 'limit', 'mode', 'snapshot',
-      'strict', 'pick',
+      'be', 'bigendian', 'unsigned', 'width', 'raw',
+      'reverse', 'snapshot', 'limit', 'mode',
+      'separator', 'strict',
       'i8', 'i16', 'i32', 'i64',
       'u8', 'u16', 'u32', 'u64',
       'f32', 'f64', 'f80',
